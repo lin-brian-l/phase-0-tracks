@@ -10,3 +10,5 @@
 	A commit is when changes made to any branch (master or otherwise) are finalized and incorporated. Such incorporations appear in a log in the .git folder. A good commit message includes (1) the name of the user, (2) the date of their commit, and (3) what they committed.
 * What is a merge conflict?
 	A merge conflict is when multiple commits make changes to the same line and/or contradict each other, in which case Git's automated process cannot determine which commit is correct.
+
+Hi Tyler! Thanks for yesterday's session :).
