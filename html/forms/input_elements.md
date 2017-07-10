@@ -6,6 +6,7 @@ fieldset: Groups elements.
 			text: Any string
 			e-mail: Looking for "@" sign.
 			password: Changes characters to dots or asterisks for privacy.
+			checkbox: Creates checkbox
 		select: Dropdown menu
 			option: Options for dropdown menu.
 	button: Create clickable button. (Auto formats)
