@@ -1,6 +1,6 @@
 puts "How many employees will be processed?"
 repeat = gets.chomp.to_i
-for i in 1..repeat
+repeat.times do
 	puts
 	puts "What is your name?"
 	name = gets.chomp
@@ -8,7 +8,7 @@ for i in 1..repeat
 	age = gets.to_i
 	puts "What year were you born?"
 	year = gets.to_i
-	puts "Our company serves garlic bread. Should we order some for you (y/n)"
+	puts "Our company serves garlic bread. Should we order some for you? (y/n)"
 	order = gets.chomp.downcase
 	ordered_garlic = order == "y"
 	puts "Would you like to enroll in the company's health insurance? (y/n)"
@@ -34,6 +34,16 @@ for i in 1..repeat
 	if name == "Drake Cula" || name == "Tu Fang"
 		result = "Definitely a vampire."
 	end
+
+	allergy = ""
+	puts "List all allergies that you have. Enter 'done' when you are finished."
+	until allergy == "done"
+		allergy = gets.chomp
+		if allergy == "sunshine"
+			result = "Probably a vampire."
+			break
+		end
+	end 
 
 	puts
 	puts result
