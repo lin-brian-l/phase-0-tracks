@@ -1,0 +1,19 @@
+For leaving apartment:
+	- Ask for user input on what is the current floor and what is the destination floor.
+	- Leave apartment and go to elevator.
+	- If current floor > destination floor:
+		- Hit "down" (lower) button.
+	- Else:
+		- Hit "up" (upper) button.
+	- Enter elevator and push button for destination floor.
+	- Exit elevator when doors close.
+
+For returning to apartment:
+	- Return back to elevator.
+	- Recall current floor (user's apartment) and destination floor (actual current floor).
+	- If destination floor > current floor:
+		- Hit "down" (lower) button.
+	- Else: 
+		- Hit "up" (upper) button.
+	- Enter elevator and push button for current floor.
+	- Exit elevator when doors close and return to user's apartment.
