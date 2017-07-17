@@ -1,3 +1,4 @@
+*** Elevator Task ***
 For leaving apartment:
 	- Ask for user input on what is the current floor and what is the destination floor.
 	- Leave apartment and go to elevator.
@@ -17,3 +18,19 @@ For returning to apartment:
 		- Hit "up" (upper) button.
 	- Enter elevator and push button for current floor.
 	- Exit elevator when doors close and return to user's apartment.
+
+*** Frying Eggs ***
+- Take out 2 eggs from refridgerator.
+- Place the 2 eggs on the countertop near the stove, far from the edge.
+- Take out a frying pan and set it over a stove.
+- Light a fire on the stove with the frying pan and set it to medium heat.
+- Grab oil container.
+- After 30 seconds of heating the frying pan, pour out enough oil to cover 75% of the pan.
+- Heat oil and pan for 30 seconds.
+- Take out a plate and spatula.
+- For egg 1:
+	- Crack egg and pour contents into oil. Throw away shells in trash can and wash hands.
+	- Allow egg to cook until bottom becomes light brown, then use the spatula to flip the egg.
+	- Allow egg to cook until bottom becomes light brown. Use spatula to flip the egg and check color.
+	- Use spatula to place egg onto the plate.
+- Repeat egg 1 steps for egg 2.
