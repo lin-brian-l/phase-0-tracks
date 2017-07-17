@@ -1,6 +1,9 @@
+#Repeating Loop
 puts "How many employees will be processed?"
 repeat = gets.chomp.to_i
 repeat.times do
+
+	#Initial Questionnaire
 	puts
 	puts "What is your name?"
 	name = gets.chomp
@@ -17,8 +20,8 @@ repeat.times do
 
 	correct_age = (age == 2017 - year)
 
+	#Analyzing Results
 	result = "Results inconclusive"
-
 	if correct_age && (ordered_garlic || enroll_insurance)
 		result = "Probably not a vampire."
 	end
@@ -35,6 +38,7 @@ repeat.times do
 		result = "Definitely a vampire."
 	end
 
+	#Allergy Survey
 	allergy = ""
 	puts "List all allergies that you have. Enter 'done' when you are finished."
 	until allergy == "done"
@@ -45,6 +49,10 @@ repeat.times do
 		end
 	end 
 
+	#Printing Result
 	puts
 	puts result
+	puts
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
