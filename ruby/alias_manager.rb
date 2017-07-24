@@ -13,8 +13,48 @@ Pseudocode for hash
 3. Print hash when repeat loop is broken.
 =end
 
+def vowel_lower(x)
+	vowel_lower = "aeiou"
+	if x == "u"
+		return "a"
+	else
+		return vowel_lower[vowel_lower.index(x)+1]
+	end
+end
+
+def consonant_lower(x)
+	consonant_lower = "bcdfghjklmnpqrstvwxyz"
+	if x == "z"
+		return "b"
+	else
+		return consonant_lower[consonant_lower.index(x)+1]
+	end
+end
+
+def vowel_upper(x)
+	vowel_upper = "AEIOU"
+	if x == "U"
+		return "A"
+	else
+		return vowel_upper[vowel_upper.index(x)+1]
+	end
+end
+
+def consonant_upper(x)
+	consonant_upper = "BCDFGHJKLMNPQRSTVWXYZ"
+	if x == "Z"
+		return "B"
+	else
+		return consonant_upper[consonant_upper.index(x)+1]
+	end
+end
+
 repeat = false
 record = {}
+vowel_lower = "aeiou"
+consonant_lower = "bcdfghjklmnpqrstvwxyz"
+vowel_upper = "AEIOU"
+consonant_upper = "BCDFGHJKLMNPQRSTVWXYZ"
 until repeat
 	puts "Enter a name to get a pseudonym. If you want to stop, type 'quit'."
 	pseudonym = gets.chomp
@@ -24,29 +64,15 @@ until repeat
 		record.each {|key, value| puts "#{value} is actually #{key}."}
 	else
 		#next vowel and consonant
-		vowel_lower = "aeiou"
 		vowel_upper = vowel_lower.upcase
-		consonant_lower = "bcdfghjklmnpqrstvwxyz"
 		consonant_upper = consonant_lower.upcase
 		new_pseudonym = []
 		pseudonym.chars.each do |x|
-			if vowel_lower.include?(x)
-				new_pseudonym.push("a") if x == "u"
-				new_pseudonym.push(vowel_lower[vowel_lower.index(x)+1])
-			end
-			if consonant_lower.include?(x)
-				new_pseudonym.push("b") if x == "z"
-				new_pseudonym.push(consonant_lower[consonant_lower.index(x)+1])
-			end
-			if vowel_upper.include?(x)
-				new_pseudonym.push("A") if x == "U"
-				new_pseudonym.push(vowel_upper[vowel_upper.index(x)+1])
-			end
-			if consonant_upper.include?(x)
-				new_pseudonym.push("B") if x == "Z"
-				new_pseudonym.push(consonant_upper[consonant_upper.index(x)+1])
-			end
-			new_pseudonym.push(x) if x == " "
+			new_pseudonym.push(vowel_lower(x)) if vowel_lower.include? x
+			new_pseudonym.push(consonant_lower(x)) if consonant_lower.include? x
+			new_pseudonym.push(vowel_upper(x)) if vowel_upper.include? x
+			new_pseudonym.push(consonant_upper(x)) if consonant_upper.include? x
+			new_pseudonym.push(" ") if x == " "
 		end
 		new_pseudonym = new_pseudonym.join
 		puts "Your pseudonym is #{new_pseudonym}."
