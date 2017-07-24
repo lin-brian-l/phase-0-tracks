@@ -1,3 +1,18 @@
+=begin
+Pseudocode for next consonant + vowel
+1. Create string for all consonants and all vowels, as well as blank array
+2. Split name into array.
+3. Check whether character in array matches character in consonant or vowel string.
+4. Get index for matching character from consonant or vowel string.
+5. Push character for index+1 into blank array.
+6. Join all characters in array and set as new pseudonym.
+
+Pseudocode for hash
+1. Create blank hash
+2. After new pseudonym is created, add user name to hash as key and add new pseudonym as value.
+3. Print hash when repeat loop is broken.
+=end
+
 repeat = false
 record = {}
 until repeat
