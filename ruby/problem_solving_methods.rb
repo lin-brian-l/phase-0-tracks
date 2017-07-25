@@ -29,6 +29,7 @@ if the number is 3 or greater
   push to FIB array
   send FIB array back when length is equal to the length requested
 =end
+
 def fib(number_of_terms)
   fib_array = []
   if number_of_terms == 1
@@ -44,9 +45,20 @@ def fib(number_of_terms)
   end
   return fib_array
 end
+
 # Driver Code For Release 1
 puts "Fibonacci Array:"
 puts "for 6 terms:"
 p fib(6)
 puts "100th term:"
 p fib(100)[-1]
+
+=begin
+Pseudocode for Bubble Sort
+0. Until no swaps are made (array is sorted)
+1. Create a loop using an index variable while index variable < length of array -1
+2. Loop through array and compare current + next array item
+3. If next item >= current item, don't swap 
+4. Else, swap the items
+5. Compare resulting array to starting array
+=end
