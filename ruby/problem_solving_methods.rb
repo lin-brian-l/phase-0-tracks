@@ -62,3 +62,25 @@ Pseudocode for Bubble Sort
 4. Else, swap the items
 5. Compare resulting array to starting array
 =end
+
+## Release 2 Code
+def sort_array(arr)
+  array_to_sort = arr
+  got_swapped = nil
+  until got_swapped == false
+      got_swapped = false
+      array_to_sort.each_index do |i| 
+        break if i + 1 == array_to_sort.length
+        if array_to_sort[i] > array_to_sort[i+1]
+          array_to_sort[i], array_to_sort[i+1] = array_to_sort[i+1], array_to_sort[i]
+          got_swapped = true
+        end
+      end   
+  end
+  return array_to_sort
+end
+
+#Driver Code for Release 2
+array = [35, 27, 8, 88, 72, 20]
+puts "Array to sort is #{array}"
+p "Sorted array is #{sort_array(array)}"
