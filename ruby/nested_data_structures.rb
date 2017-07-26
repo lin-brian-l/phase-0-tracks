@@ -66,7 +66,6 @@ tournament.each {|key, value| puts "#{key}: #{value}"}
 puts
 
 #print information for each event on a separate line
-
 access = tournament.keys
 (0...access.length).each do |x|  
 	puts access[x]
