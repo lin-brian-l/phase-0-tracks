@@ -18,7 +18,8 @@ repeat.times do
 	insurance = gets.chomp.downcase
 	enroll_insurance = insurance == "y"
 
-	correct_age = (age == 2017 - year)
+	correct_age = (year = Time.now.year - age)
+	p correct_age
 
 	#Analyzing Results
 	result = "Results inconclusive"
