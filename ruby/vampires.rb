@@ -19,25 +19,6 @@ repeat.times do
 	enroll_insurance = insurance == "y"
 
 	correct_age = (year = Time.now.year - age)
-	p correct_age
-
-	#Analyzing Results
-	result = "Results inconclusive"
-	if correct_age && (ordered_garlic || enroll_insurance)
-		result = "Probably not a vampire."
-	end
-
-	if (correct_age == false) && (!ordered_garlic || !enroll_insurance)
-		result = "Probably a vampire."
-	end
-
-	if (correct_age == false) && (!ordered_garlic) && (!enroll_insurance)
-		result = "Almost certainly a vampire."
-	end 
-
-	if name == "Drake Cula" || name == "Tu Fang"
-		result = "Definitely a vampire."
-	end
 
 	#Allergy Survey
 	allergy = ""
@@ -49,6 +30,26 @@ repeat.times do
 			break
 		end
 	end 
+
+	#Analyzing Results
+	if result != "Probably a vampire."
+		result = "Results inconclusive"
+		if correct_age && (ordered_garlic || enroll_insurance)
+			result = "Probably not a vampire."
+		end
+
+		if (correct_age == false) && (!ordered_garlic || !enroll_insurance)
+			result = "Probably a vampire."
+		end
+
+		if (correct_age == false) && (!ordered_garlic) && (!enroll_insurance)
+			result = "Almost certainly a vampire."
+		end 
+
+		if name == "Drake Cula" || name == "Tu Fang"
+			result = "Definitely a vampire."
+		end
+	end
 
 	#Printing Result
 	puts
