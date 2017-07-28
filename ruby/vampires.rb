@@ -23,12 +23,9 @@ repeat.times do
 	#Allergy Survey
 	allergy = ""
 	puts "List all allergies that you have. Enter 'done' when you are finished."
-	until allergy == "done"
+	until allergy == "done" || allergy == "sunshine"
 		allergy = gets.chomp
-		if allergy == "sunshine"
-			result = "Probably a vampire."
-			break
-		end
+		result = "Probably a vampire." if allergy == "sunshine"
 	end 
 
 	#Analyzing Results
