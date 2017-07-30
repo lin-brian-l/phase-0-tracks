@@ -1,3 +1,4 @@
+#Declare class and methods
 class GuessingGame
 
 	attr_reader :hidden, :user1_input, :history, :guesses, :tries, :guesses
@@ -13,7 +14,7 @@ class GuessingGame
 	def compare(user2_input)
 		switch = false
 
-		if !@history.include?(user2_input) 
+		if !@history.include?(user2_input) #Check if user 2 input wasn't tried
 			@history << user2_input
 
 			@user1_input.each_index do |x| #Go through each index value of word to guess...
