@@ -1,0 +1,13 @@
+Game Pseudocode
+
+1. Create class for "GuessingGame"
+2. Initialize variables for word (user1_input), guess (user2_input), and array of guesses (history) = []
+3. Create method to set # of guesses proportional to word length of user1_input.
+4. Create method to compare user2_input with user1_input.
+	a) Print blank spaces = user1_input.length
+	b) Store user2_input into history array.
+	c) If user2_input is not in user1_input, print "Guess again!" and subtract # of guesses by 1 and add 1 to # of tries.
+	d) If user2_input is in history array, then print "You've guessed that already!" and # of guesses is unaffected.
+	e) If user2_input is in user1_input, then print that letter instead of a blank space. Print remaining # of guesses and # of tries taken.
+	f) Exit comparison method when all of user1_input letters are printed.
+5. Create reader for history array and setter for user2_input. 
