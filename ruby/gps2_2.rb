@@ -73,3 +73,14 @@ groceries = create_list("carrots apples cereal pizza")
 p add_item(groceries, "pineapples")
 p update_item(groceries, "pineapples", 2)
 print_list(groceries)
+
+=begin
+Reflection
+
+1) I still need to work more on pseudocoding; Anna's and my pseudocode is very specific, whereas pseudocode should be very general.
+2) Using a nested array would work for this exercise, since you should be able to create a nested array which adds an item and that quantity for each index, but using a hash is much more convenient because each item can be assigned a value (quantity) and easily updated.
+3) A method returns the last thing that it computed, whether it be the last line of a .each loop or a complete hash/array.
+4) Methods can have nearly any object passed into it, including other methods. Strings, integers, arrays, and hashes can also be passed into the method.
+5) A method can be called as an argument for another method, or the output of a method could be stored in a variable and then the variable could be passed as an argument for another method.
+6) Some hash methods such as "delete" were enforced, but otherwise, the concepts of this challenge were not that difficult.
+=end
