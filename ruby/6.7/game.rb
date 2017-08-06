@@ -6,7 +6,7 @@ class GuessingGame
 	def initialize(user1_input)
 		@user1_input = user1_input.split("")
 		@history = []
-		@guesses = user1_input.length * 2
+		@guesses = 7 + user1_input.length
 		@tries = 0
 		@hidden = @user1_input.map { |x| x = "_"}
 	end
@@ -41,10 +41,12 @@ class GuessingGame
 
 	#Test if User 2 enters 1 letter at a time
 	def repeat(user2_input)
-		until (user2_input.length == 1) && ("abcdefghijklmnopqrstuvwxyz".include? user2_input)
-			puts "Please only guess 1 letter at a time!"
-			user2_input = gets.chomp
+		until (user2_input.length == 1) && (("a".."z").include?(user2_input))
+			puts "Please only guess 1 letter at a time - no numbers or punctuation marks!"
+
+			user2_input = gets.chomp.downcase
 		end
+		user2_input
 	end
 end
 
@@ -64,8 +66,9 @@ puts game.hidden.join(" ")
 
 #Player 2 input - first guess
 puts "\nNow for Player 2! Guess one letter at a time, just like Wheel of Fortune!"
-user2_input = gets.chomp
-game.repeat(user2_input)
+user2_input = gets.chomp.downcase
+user2_input = game.repeat(user2_input)
+
 
 loop do #Play game until win or loss condition is met
 	game.compare(user2_input)
@@ -82,7 +85,7 @@ loop do #Play game until win or loss condition is met
 	break if (game.hidden.join("") == game.user1_input.join("")) || game.guesses == 0
 
 	#Enter next letter
-	user2_input = gets.chomp
-	game.repeat(user2_input)
+	user2_input = gets.chomp.downcase
+	user2_input = game.repeat(user2_input)
 	
 end
