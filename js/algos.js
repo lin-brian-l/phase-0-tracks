@@ -1,5 +1,4 @@
 // ************************Release 0************************
-
 // Pseudocode
 // 1. Set a variable equal to the first item in an array
 // 2. Compare the lenghts of the variable and the item in the array
@@ -68,7 +67,6 @@ var same_entry = function(object1, object2) {
 // console.log(same_entry(r1test1, r1test2));
 
 // ************************Release 2************************
-
 // Pseudocode
 // 1. Randomly determine the length of a word
 // 2. Use a loop to randomly determine the content of the word
