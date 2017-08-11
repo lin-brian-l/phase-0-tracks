@@ -27,17 +27,14 @@ private
 #Calculating the number of deaths by multiplying population by a number, and based on population density. Prints a statement at the end saying how many people will die in each state.
   def predicted_deaths
     # predicted deaths is solely based on population density
-    if @population_density >= 200
+    if @population_density >= 250
       r = 0.4
-    elsif @population_density >= 150
-      r = 0.3
-    elsif @population_density >= 100
-      r = 0.2
-    elsif @population_density >= 50
-      r = 0.1
-    else
+    elsif @population_density < 50
       r = 0.05
-    end
+    else
+      r = 0.1 * (@population_density / 50).floor
+    end 
+
     number_of_deaths = (@population * r).floor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
   end
@@ -46,16 +43,10 @@ private
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    if @population_density >= 200
+    if @population_density >= 250
       speed = 0.5
-    elsif @population_density >= 150
-      speed = 1
-    elsif @population_density >= 100
-      speed = 1.5
-    elsif @population_density >= 50
-      speed = 2
     else
-      speed = 2.5
+      speed = 2.5 - 0.5 * (@population_density / 50).floor
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
@@ -90,8 +81,8 @@ end
 
 #=======================================================================
 # Reflection Section
-1. The first syntax is showing how to set a string as a key, while the second syntax is showing how to set a symbol as a key. The first method requires a hash rocket, whereas the second does not and saves processing time in Ruby.
-2. require_relative links a ruby file within the same directory, whereas require would need the exact directory of the ruby file to be linked.
-3. .each, .each_index, .each_key, and .each_pair are different ways to iterate through a hash. However, .each and .each_pair seem to be identical and .each_index and .each_key only iterate through each index and key, respectively.
-4. virus_effects was having two methods use parameters even though those parameters were not used within the method.
-5. I solidified how to iterate through nested hashes; without a tip from our GPS guide, finding the exact value within the nested hash would have been more time-consuming.
+# 1. The first syntax is showing how to set a string as a key, while the second syntax is showing how to set a symbol as a key. The first method requires a hash rocket, whereas the second does not and saves processing time in Ruby.
+# 2. require_relative links a ruby file within the same directory, whereas require would need the exact directory of the ruby file to be linked.
+# 3. .each, .each_index, .each_key, and .each_pair are different ways to iterate through a hash. However, .each and .each_pair seem to be identical and .each_index and .each_key only iterate through each index and key, respectively.
+# 4. virus_effects was having two methods use parameters even though those parameters were not used within the method.
+# 5. I solidified how to iterate through nested hashes; without a tip from our GPS guide, finding the exact value within the nested hash would have been more time-consuming.
