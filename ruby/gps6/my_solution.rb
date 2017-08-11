@@ -36,6 +36,7 @@ private
     end 
 
     number_of_deaths = (@population * r).floor
+    
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
   end
 
