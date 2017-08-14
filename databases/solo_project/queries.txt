@@ -1,0 +1,87 @@
+******************* Release 2 *******************
+
+1. Display the information in one table (either table is fine).
+
+SELECT * FROM players
+
+1|Justin Hallett|Wizzrobe|10|8|false|true
+2|Jeffrey Williamson|Axe|9|9|true|true
+3|Zachary Cordoni|SFAT|8|1|false|true
+4|Daniel Rodriguez|Chudat|7|7|true|true
+5|Justin McGrath|Plup|6|4|true|true
+6|William Hjelte|Leffen|5|1|false|false
+7|Jason Zimmerman|Mew2King|4|4|true|true
+8|Joseph Marquez|Mango|3|2|true|true
+9|Juan Debiedma|Hungrybox|2|5|false|true
+10|Adam Lindgren|Armada|1|6|true|true
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE players SET american = "false" WHERE id = 10;
+
+*no output*
+
+3. Display the information in both tables using one query.
+
+SELECT * FROM players, characters WHERE players.char_id = characters.id;
+
+1|Justin Hallett|Wizzrobe|10|8|false|true|8|Captain Falcon
+2|Jeffrey Williamson|Axe|9|9|true|true|9|Pikachu
+3|Zachary Cordoni|SFAT|8|1|false|true|1|Fox
+4|Daniel Rodriguez|Chudat|7|7|true|true|7|Ice Climbers
+5|Justin McGrath|Plup|6|4|true|true|4|Sheik
+6|William Hjelte|Leffen|5|1|false|false|1|Fox
+7|Jason Zimmerman|Mew2King|4|4|true|true|4|Sheik
+8|Joseph Marquez|Mango|3|2|true|true|2|Falco
+9|Juan Debiedma|Hungrybox|2|5|false|true|5|Jigglypuff
+10|Adam Lindgren|Armada|1|6|true|false|6|Peach
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT players.id, players.name, players.tag, characters.character FROM players JOIN characters ON players.char_id = characters.id;
+
+1|Justin Hallett|Wizzrobe|Captain Falcon
+2|Jeffrey Williamson|Axe|Pikachu
+3|Zachary Cordoni|SFAT|Fox
+4|Daniel Rodriguez|Chudat|Ice Climbers
+5|Justin McGrath|Plup|Sheik
+6|William Hjelte|Leffen|Fox
+7|Jason Zimmerman|Mew2King|Sheik
+8|Joseph Marquez|Mango|Falco
+9|Juan Debiedma|Hungrybox|Jigglypuff
+10|Adam Lindgren|Armada|Peach
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM players WHERE american = "false";
+
+*no output*
+
+******************* Release 3 *******************
+
+1. Some examples of "join" statements include "inner join", "left outer join", "right outer join", and "full outer join". These statements determine which parts of two tables will be displayed together, but they have different functions. "Inner join" (or simple "join") will only display the parts from both tables which are the same; "left outer join" will display all sections from the original table which are the same as the second table; "right outer join" will display all sections from the second table which are the same as the original table; and "full outer join" will display all parts of both tables which are the same (substituting "null" for empty data). This site is a useful reference: https://www.techonthenet.com/sql/joins.php
+
+2. Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+*RIGHT and FULL OUTER JOINs caused an error, so I only experimented with LEFT OUTER JOIN.*
+
+SELECT players.name, players.tag, characters.character FROM players LEFT OUTER JOIN characters ON players.char_id = characters.id;
+
+Justin Hallett|Wizzrobe|Captain Falcon
+Jeffrey Williamson|Axe|Pikachu
+Zachary Cordoni|SFAT|Fox
+Daniel Rodriguez|Chudat|Ice Climbers
+Justin McGrath|Plup|Sheik
+Jason Zimmerman|Mew2King|Sheik
+Joseph Marquez|Mango|Falco
+Juan Debiedma|Hungrybox|Jigglypuff
+William Hjelte|Leffen|Fox
+Adam Lindgren|Armada|Peach
+
+SELECT players.rank, players.name, players.tag, characters.character FROM players LEFT OUTER JOIN characters ON players.char_id = characters.id WHERE characters.id < 5;
+
+8|Zachary Cordoni|SFAT|Fox
+6|Justin McGrath|Plup|Sheik
+4|Jason Zimmerman|Mew2King|Sheik
+3|Joseph Marquez|Mango|Falco
+5|William Hjelte|Leffen|Fox
