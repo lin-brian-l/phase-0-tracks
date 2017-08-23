@@ -1,0 +1,5 @@
+2. Common HTTP status codes include 404 (not found; page is no longer available), 403 (forbidden; user's machine lacks access to the page); 500 (internal service error; no specific error code); and 503 (service unavailable; server may be momentarily down).
+
+3. GET requests are data requests that are made within the URL; in other words, requests that are made when a user loads a webpage. These requests will be remade when a user refreshes a page. POST requests are within the message body of the HTTP request, which does not refresh when reloading a page. These requests are safer, since they are not loaded each time a page is requested.
+
+4. A cookie is data from a website that's stored on the user's computer by their browser so that information can be constantly referenced. For example, "remembering" that a user has logged in to a website requires that persistent information be remembered by the website. Such cookies are made and referenced whenever the user makes a HTTP request to a webpage. 
