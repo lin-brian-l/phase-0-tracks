@@ -70,3 +70,23 @@ get '/add/:n1/:n2' do
   n3 = n1 + n2
   "#{n1} + #{n2} = #{n3}"
 end
+
+# search for students by first letter
+get '/student_search/:letter' do
+  student = db.execute("SELECT * FROM students WHERE name LIKE '#{params[:letter].upcase}%'")
+  output = "Students starting with #{params[:letter].upcase}:<br><br>"
+
+  #adding note if no names start with selected letter:
+  output << "No students have names starting with '#{params[:letter].upcase}'." if student.empty?
+
+  #adding to output if names start with selected letter:
+  student.each do |student|
+	output << "ID: #{student['id']}<br>"
+    output << "Name: #{student['name']}<br>"
+    output << "Age: #{student['age']}<br>"
+    output << "Campus: #{student['campus']}<br><br>"
+  end
+  output
+end
+
+# ********** Release 1 **********
