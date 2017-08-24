@@ -90,3 +90,8 @@ get '/student_search/:letter' do
 end
 
 # ********** Release 1 **********
+# 1. Sinatra is not the only web app library for Ruby; others include Rack 'n' Alternatives, Ruby on Rails, Volt, and others.
+# 2. Assuming that any database gem available for Ruby is also available for Sinatra, there are a plethora of other gems. 
+#    Such gems include pg, mysql2, and ruby-oci8.
+# 3. "Web stack" is referring to software for developing websites and web applications. The "stack" includes an operating system, 
+#    a databse, a webserver, and a script.
